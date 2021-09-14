@@ -1,0 +1,129 @@
+class FridayParty{
+    public static void main(String args[]){
+     try{
+          System.out.println("Friday Party BEGINS");
+          Thread.sleep(11);
+          System.out.println("Friday Party ENDS");
+     }
+     catch(Exception e){}
+
+    }
+}
+
+----------------------------------
+for hello in `ls *.txt`
+ do
+ folderName=`echo $hello | awk -F. '{print $1}'`
+ echo $folderName
+ mkdir $folderName
+done
+
+
+-------------------------------------
+for a in 1 2 3 4 5 6 7 8 9 10
+do
+    if [ $a == 5 ]
+    then
+        break
+    fi
+    echo "Iteration no $a"
+done
+
+----------------------------
+for a in 1 2 3 4 5 6 7 8 9 10
+do
+    if [ $a -le 10 ]
+    then
+       echo  "the nos are "$a
+    fi
+
+done
+
+---------------------------------
+                            // try to solve using while loop
+#!/bin/bash
+isPartTime=1;
+isFullTime=2;
+totSalary=0;
+empSalPerHr=100;
+workingDays=22;
+
+for (( day=1; day<=$workingDays; day++ ))
+do
+  empCheck=$((RANDOM%3));
+  echo $empCheck
+  case $empCheck in
+       $isFullTime) 
+        empWorkHrs=8;;
+       $isPartTime) 
+        empWorkHrs=4;;
+       *) 
+        empWorkHrs=0;;
+  esac;
+  salary=$(($empWorkHrs*empSalPerHr));
+  totSalary=$(($totSalary+$salary));
+done;
+
+------------------------------------------
+
+a=20.5
+b=5
+
+echo "20.5+5" | bc
+echo "20.5-5" | bc
+echo "20.5*5" | bc
+echo "scale=2; 20.5/5" | bc
+echo "20.5%5" | bc
+num=4
+
+echo "scale=2;sqrt($num)" | ba -l
+echo "scale=2;3^3" | ba -l
+
+------------------------------------------
+
+Arrays: 
+#! /bin/bash
+# To declare static Array 
+arr=(prakhar ankitz 1 rishabh manish abhinav)
+  
+# To print all elements of array
+echo ${arr[@]}        # prakhar ankit 1 rishabh manish abhinav
+echo ${arr[*]}        # prakhar ankit 1 rishabh manish abhinav
+echo ${arr[@]:0}    # prakhar ankit 1 rishabh manish abhinav
+echo ${arr[*]:0}    # prakhar ankit 1 rishabh manish abhinav
+  
+# To print first element
+echo ${arr[0]}        # prakhar
+echo ${arr}            # prakhar
+  
+# To print particular element
+echo ${arr[3]}        # rishabh
+echo ${arr[1]}        # ankit
+  
+# To print elements from a particular index
+echo ${arr[@]:0}    # prakhar ankit 1 rishabh manish abhinav
+echo ${arr[@]:1}    # ankit 1 rishabh manish abhinav
+echo ${arr[@]:2}    # 1 rishabh manish abhinav
+echo ${arr[0]:1}    # rakhar
+  
+# To print elements in range
+echo ${arr[@]:1:4}    # ankit 1 rishabh manish
+echo ${arr[@]:2:3}    # 1 rishabh manish
+echo ${arr[4]:1:3}    # rak how it works
+  
+# Length of Particular element
+echo ${#arr[5]}        # 7
+echo ${#arr}        # 7
+  
+# Size of an Array
+echo ${#arr[@]}        # 6
+echo ${#arr[*]}        # 6
+  
+# Search in Array
+echo ${arr[@]/*[r]*/} 
+
+
+# Replacing Substring Temporary
+echo ${arr[@]//a/A}        # prAkhAr Ankit 1 rishAbh mAnish AbhinAv
+echo ${arr[@]}            # prakhar ankit 1 rishabh manish abhinav
+echo ${arr[0]//r/R}        # pRakhaR
