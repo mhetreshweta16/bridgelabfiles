@@ -1,3 +1,6 @@
+reach2girishbr@gmail.com
+
+
 class FridayParty{
     public static void main(String args[]){
      try{
@@ -127,3 +130,39 @@ echo ${arr[@]/*[r]*/}
 echo ${arr[@]//a/A}        # prAkhAr Ankit 1 rishAbh mAnish AbhinAv
 echo ${arr[@]}            # prakhar ankit 1 rishabh manish abhinav
 echo ${arr[0]//r/R}        # pRakhaR
+
+=========================================================================
+sum=0
+sumofalldigit()
+{	
+       
+	for i in ${arr[@]}
+	do	
+		sum+=$((arr[$i]))
+	done
+echo "$sum"
+}
+
+array=( 3 1 4 )
+sumofalldigit "${array[@]}"
+
+
+{  
+     arr=("$@")
+     for i in "${arr[@]}";
+	do	                
+          sum+=$i
+	done
+     echo "$sum"
+}
+
+  sum=$(($sum+$i));
+
+============================================
+1)One prob ststement
+2)start with IF case or Switch case
+3) Extent same prog  using For Loop/while loop
+4) if we written logic using For loop with if, then replace the same logic with While loop with Siwtch casw
+5) Extend same prog , using arrays
+6) Search any string , if present remove or replace with new string
+7) Then extend it with Dictionary, fetch the value using key. 
