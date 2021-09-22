@@ -1,6 +1,10 @@
-for (( i=$((RANDOM%10)); i<=6; i++ ))
+for (( i=1; i<=6; i++ ))
 do
-   echo "$i"
+   x=$((RANDOM%10))   
+   if [ $x -le 6 ]
+   then 
+       echo "$i"
+	fi   
   
 done
   
